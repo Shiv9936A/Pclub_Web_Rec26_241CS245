@@ -18,7 +18,7 @@ function Home() {
 
       if (entry.isIntersecting) {
 
-        entry.target.style.transitionDelay = (index % 4 * 80) + "ms"
+        entry.target.style.transitionDelay = ((index % 4) * 80) + "ms"
 
         entry.target.classList.add("visible")
 
@@ -33,6 +33,8 @@ function Home() {
   })
 
   revealElements.forEach((el) => observer.observe(el))
+
+  return () => observer.disconnect()
 
 }, [])
   return (

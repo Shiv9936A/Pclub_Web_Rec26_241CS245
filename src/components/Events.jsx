@@ -34,7 +34,7 @@ function Events() {
     },
   ];
   return (
-    <section id="events" className="section-pad reveal">
+    <section id="events" className="section-pad">
       <div className="events-header reveal">
         {/* <div className="section-divider">
           <div className="divider-line"></div>
@@ -51,12 +51,16 @@ function Events() {
 
         <a href="#" className="btn-outline">
           All Events
+          <svg viewBox="0 0 24 24">
+            <line x1="5" y1="12" x2="19" y2="12" />
+            <polyline points="12 5 19 12 12 19" />
+          </svg>
         </a>
       </div>
 
-      <div className="events-grid reveal">
+      <div className="events-grid ">
         {events.map((event) => (
-          <div className="ev-card" key={event.id}>
+          <div className="ev-card reveal" key={event.id}>
             <div className="ev-card-img">
               <img src={event.image} alt={event.title} />
 
@@ -74,9 +78,20 @@ function Events() {
             </div>
 
             <div className="ev-footer">
-              <div className="ev-location">📍 {event.location}</div>
-
-              <div className="ev-link">Details →</div>
+              <div className="ev-location">
+                <svg viewBox="0 0 24 24">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
+                {event.location}
+              </div>
+              <div className="ev-link">
+                Details
+                <svg viewBox="0 0 24 24">
+                  <line x1="5" y1="12" x2="19" y2="12" />
+                  <polyline points="12 5 19 12 12 19" />
+                </svg>
+              </div>
             </div>
           </div>
         ))}

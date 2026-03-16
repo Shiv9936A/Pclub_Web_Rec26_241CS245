@@ -1,8 +1,7 @@
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 function Hero() {
   return (
-    <section id="hero">
-
+    <section id="hero" className="reveal">
       <div className="hero-bg">
         <img
           src="https://images.unsplash.com/photo-1452587925148-ce544e77e70d?w=1800&q=85"
@@ -13,37 +12,36 @@ function Hero() {
       <div className="hero-gradient"></div>
 
       <div className="hero-content">
-        
-
-        <div className="hero-eyebrow">
-          Est. 2018 · Bengaluru, India
-        </div>
+        <div className="hero-eyebrow">Est. 2018 · Bengaluru, India</div>
 
         <h1 className="hero-title">
-          See the World<br />Through the <em>Lens.</em>
+          See the World
+          <br />
+          Through the <em>Lens.</em>
         </h1>
 
         <p className="hero-desc">
-          Aperture is a community of passionate photographers — from first-timers to seasoned professionals — gathering to shoot, learn, and exhibit together.
+          Aperture is a community of passionate photographers — from
+          first-timers to seasoned professionals — gathering to shoot, learn,
+          and exhibit together.
         </p>
 
         <div className="hero-actions">
-
           <a href="#about" className="btn-primary">
             Discover More
+            <svg viewBox="0 0 24 24">
+              <line x1="5" y1="12" x2="19" y2="12" />
+              <polyline points="12 5 19 12 12 19" />
+            </svg>
           </a>
 
-
           <Link to="/gallery" className="btn-ghost">
-  View Gallery
-</Link>
-
+            View Gallery
+          </Link>
         </div>
-
       </div>
 
       <div className="hero-stats">
-
         <div className="stat-item">
           <div className="stat-num">240+</div>
           <div className="stat-label">Members</div>
@@ -58,16 +56,14 @@ function Hero() {
           <div className="stat-num">7</div>
           <div className="stat-label">Exhibitions</div>
         </div>
-
       </div>
 
       <div className="hero-scroll-hint">
         <span>Scroll</span>
         <div className="scroll-line"></div>
       </div>
-
     </section>
-  )
+  );
 }
 
-export default Hero
+export default Hero;

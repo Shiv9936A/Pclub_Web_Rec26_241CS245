@@ -3,13 +3,15 @@ import { useState, useEffect } from "react";
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [theme, setTheme] = useState("dark");
+  const [theme, setTheme] = useState(
+    localStorage.getItem("aperture-theme") || "dark",
+  );
   const toggleTheme = () => {
     const newTheme = theme === "dark" ? "light" : "dark";
 
     setTheme(newTheme);
-
     document.documentElement.setAttribute("data-theme", newTheme);
+    localStorage.setItem("aperture-theme", newTheme);
   };
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -28,9 +30,10 @@ function Navbar() {
       }
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
 
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () =>
+      window.addEventListener("scroll", handleScroll, { passive: true });
   }, []);
   useEffect(() => {
     const sections = document.querySelectorAll("section");
@@ -40,13 +43,9 @@ function Navbar() {
       let current = "";
 
       sections.forEach((section) => {
-        const sectionTop = section.offsetTop - 100;
-        const sectionHeight = section.offsetHeight;
+        const sectionTop = section.offsetTop - 120;
 
-        if (
-          window.scrollY >= sectionTop &&
-          window.scrollY < sectionTop + sectionHeight
-        ) {
+        if (window.scrollY >= sectionTop) {
           current = section.getAttribute("id");
         }
       });
@@ -60,17 +59,17 @@ function Navbar() {
       });
     };
 
-    window.addEventListener("scroll", activateLink);
+    window.addEventListener("scroll", activateLink, { passive: true });
 
     return () => window.removeEventListener("scroll", activateLink);
   }, []);
   return (
     <>
       <nav id="navbar">
-        <a className="nav-logo" href="#hero">
+        <Link className="nav-logo" to="/">
           <span className="nav-logo-name">Aperture</span>
           <span className="nav-logo-sub">Photography Club</span>
-        </a>
+        </Link>
 
         <ul className="nav-links">
           <li>
@@ -91,15 +90,17 @@ function Navbar() {
         </ul>
 
         <div className="nav-right">
-          <Link to="/gallery" className="nav-cta">
+          <Link to="/events" className="nav-cta">
             Join Club
           </Link>
 
-          <button className="theme-toggle" onClick={toggleTheme}>
-            <span className="theme-toggle-icon">
-              {theme === "dark" ? "🌙" : "☀"}
-            </span>
-          </button>
+          <button
+            className="theme-toggle"
+            id="theme-toggle"
+            title="Toggle theme"
+            aria-label="Toggle theme"
+            onClick={toggleTheme}
+          />
 
           <button
             className={`hamburger ${menuOpen ? "open" : ""}`}
