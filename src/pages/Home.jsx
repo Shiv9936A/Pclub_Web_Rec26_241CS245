@@ -8,29 +8,33 @@ import Contact from "../components/Contact"
 import Footer from "../components/Footer"
 
 function Home() {
-   useEffect(() => {
+  useEffect(() => {
 
-    const revealElements = document.querySelectorAll(".reveal")
+  const revealElements = document.querySelectorAll(".reveal")
 
-    const observer = new IntersectionObserver(
-      (entries) => {
+  const observer = new IntersectionObserver((entries) => {
 
-        entries.forEach((entry) => {
+    entries.forEach((entry, index) => {
 
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible")
-          }
+      if (entry.isIntersecting) {
 
-        })
+        entry.target.style.transitionDelay = (index % 4 * 80) + "ms"
 
-      },
-      { threshold:0.1,
-rootMargin:"0px 0px -80px 0px" }
-    )
+        entry.target.classList.add("visible")
 
-    revealElements.forEach((el) => observer.observe(el))
+        observer.unobserve(entry.target)
 
-  }, [])
+      }
+
+    })
+
+  }, {
+    threshold: 0.12
+  })
+
+  revealElements.forEach((el) => observer.observe(el))
+
+}, [])
   return (
     <>
       <Navbar />

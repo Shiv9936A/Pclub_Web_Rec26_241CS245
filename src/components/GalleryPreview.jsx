@@ -1,9 +1,12 @@
 function GalleryPreview() {
   return (
     <section id="gallery-preview" className="section-pad reveal">
-
-      <div className="gallery-header">
-
+      <div className="gallery-header reveal">
+        {/* <div className="section-divider">
+          <div className="divider-line"></div>
+          <div className="divider-dot"></div>
+          <div className="divider-line"></div>
+        </div> */}
         <div>
           <div className="section-eyebrow">Gallery</div>
 
@@ -15,12 +18,9 @@ function GalleryPreview() {
         <a href="/gallery" className="btn-outline">
           View Full Gallery
         </a>
-
       </div>
 
-
-      <div className="gallery-masonry">
-
+      <div className="gallery-masonry reveal">
         <div className="gal-item">
           <img
             src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=600&q=80"
@@ -31,7 +31,6 @@ function GalleryPreview() {
             <div className="gal-cat">Nature</div>
           </div>
         </div>
-
 
         <div className="gal-item">
           <img
@@ -44,7 +43,6 @@ function GalleryPreview() {
           </div>
         </div>
 
-
         <div className="gal-item">
           <img
             src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80"
@@ -56,7 +54,6 @@ function GalleryPreview() {
           </div>
         </div>
 
-
         <div className="gal-item">
           <img
             src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=600&q=80"
@@ -67,11 +64,9 @@ function GalleryPreview() {
             <div className="gal-cat">Nature</div>
           </div>
         </div>
-
       </div>
-
     </section>
-  )
+  );
 }
 
-export default GalleryPreview
+export default GalleryPreview;

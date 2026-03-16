@@ -1,9 +1,46 @@
 function Events() {
+  const events = [
+    {
+      id: 1,
+      title: "Golden Hour Walk",
+      date: "May 20, 2026",
+      category: "Photo Walk",
+      location: "Cubbon Park",
+      image:
+        "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=800",
+      desc: "Capture the warm tones of sunset during our guided golden hour walk.",
+    },
+
+    {
+      id: 2,
+      title: "Street Photography Workshop",
+      date: "June 2, 2026",
+      category: "Workshop",
+      location: "MG Road",
+      image:
+        "https://images.unsplash.com/photo-1492724441997-5dc865305da7?w=800",
+      desc: "Learn the art of capturing candid urban moments.",
+    },
+
+    {
+      id: 3,
+      title: "Nature Photography Meetup",
+      date: "June 15, 2026",
+      category: "Meetup",
+      location: "Lalbagh Botanical Garden",
+      image:
+        "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=800",
+      desc: "Explore nature photography techniques with fellow photographers.",
+    },
+  ];
   return (
     <section id="events" className="section-pad reveal">
-
-      <div className="events-header">
-
+      <div className="events-header reveal">
+        {/* <div className="section-divider">
+          <div className="divider-line"></div>
+          <div className="divider-dot"></div>
+          <div className="divider-line"></div>
+        </div> */}
         <div>
           <div className="section-eyebrow">Upcoming Events</div>
 
@@ -15,113 +52,37 @@ function Events() {
         <a href="#" className="btn-outline">
           All Events
         </a>
-
       </div>
 
+      <div className="events-grid reveal">
+        {events.map((event) => (
+          <div className="ev-card" key={event.id}>
+            <div className="ev-card-img">
+              <img src={event.image} alt={event.title} />
 
-      <div className="events-grid">
+              <div className="ev-card-img-overlay"></div>
 
-        {/* Event Card 1 */}
-        <div className="ev-card">
+              <span className="ev-tag">{event.category}</span>
+            </div>
 
-          <div className="ev-card-img">
-            <img
-              src="https://images.unsplash.com/photo-1501854140801-50d01698950b?w=700&q=80"
-              alt="Photo Walk"
-            />
-            <div className="ev-card-img-overlay"></div>
-            <span className="ev-tag">Photo Walk</span>
+            <div className="ev-body">
+              <div className="ev-date">{event.date}</div>
+
+              <h3 className="ev-title">{event.title}</h3>
+
+              <p className="ev-desc">{event.desc}</p>
+            </div>
+
+            <div className="ev-footer">
+              <div className="ev-location">📍 {event.location}</div>
+
+              <div className="ev-link">Details →</div>
+            </div>
           </div>
-
-          <div className="ev-body">
-
-            <div className="ev-date">
-              05 April 2026 · 5:30 AM
-            </div>
-
-            <div className="ev-title">
-              Golden Hour Walk — Cubbon Park
-            </div>
-
-            <div className="ev-desc">
-              Capture the city's morning light as it filters through
-              Cubbon Park's oldest trees.
-            </div>
-
-          </div>
-
-        </div>
-
-
-
-        {/* Event Card 2 */}
-        <div className="ev-card">
-
-          <div className="ev-card-img">
-            <img
-              src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=700&q=80"
-              alt="Workshop"
-            />
-            <div className="ev-card-img-overlay"></div>
-            <span className="ev-tag">Workshop</span>
-          </div>
-
-          <div className="ev-body">
-
-            <div className="ev-date">
-              19 April 2026 · 10:00 AM
-            </div>
-
-            <div className="ev-title">
-              Portrait Lighting Workshop
-            </div>
-
-            <div className="ev-desc">
-              Learn lighting techniques using reflectors
-              and off-camera flash.
-            </div>
-
-          </div>
-
-        </div>
-
-
-
-        {/* Event Card 3 */}
-        <div className="ev-card">
-
-          <div className="ev-card-img">
-            <img
-              src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=700&q=80"
-              alt="Exhibition"
-            />
-            <div className="ev-card-img-overlay"></div>
-            <span className="ev-tag">Exhibition</span>
-          </div>
-
-          <div className="ev-body">
-
-            <div className="ev-date">
-              10 May 2026 · All Weekend
-            </div>
-
-            <div className="ev-title">
-              Annual Photo Exhibition 2026
-            </div>
-
-            <div className="ev-desc">
-              Featuring curated prints from club members.
-            </div>
-
-          </div>
-
-        </div>
-
-
+        ))}
       </div>
-
     </section>
-  )
+  );
 }
 
-export default Events
+export default Events;

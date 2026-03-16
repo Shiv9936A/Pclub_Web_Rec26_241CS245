@@ -13,6 +13,7 @@ function Hero() {
       <div className="hero-gradient"></div>
 
       <div className="hero-content">
+        
 
         <div className="hero-eyebrow">
           Est. 2018 · Bengaluru, India

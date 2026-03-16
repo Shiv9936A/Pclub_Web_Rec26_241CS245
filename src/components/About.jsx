@@ -2,7 +2,7 @@ function About() {
   return (
     <section id="about" className="section-pad reveal">
 
-      <div className="about-inner">
+      <div className="about-inner reveal">
 
         <div className="about-img-wrap">
 
@@ -21,6 +21,11 @@ function About() {
 
 
         <div className="about-text">
+          <div className="section-divider">
+  <div className="divider-line"></div>
+  <div className="divider-dot"></div>
+  <div className="divider-line"></div>
+</div>
 
           <div className="section-eyebrow">
             About Us

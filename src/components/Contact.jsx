@@ -5,7 +5,12 @@ function Contact() {
       <div className="contact-inner">
 
         {/* Left Info Section */}
-        <div className="contact-left">
+        <div className="contact-left reveal">
+          <div className="section-divider">
+  <div className="divider-line"></div>
+  <div className="divider-dot"></div>
+  <div className="divider-line"></div>
+</div>
 
           <div className="section-eyebrow">
             Contact
@@ -58,7 +63,7 @@ function Contact() {
 
 
         {/* Right Form Section */}
-        <form className="contact-form">
+        <form className="contact-form reveal">
 
           <div className="cf-row">
 
