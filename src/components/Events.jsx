@@ -1,6 +1,6 @@
 function Events() {
   return (
-    <section id="events" className="section-pad">
+    <section id="events" className="section-pad reveal">
 
       <div className="events-header">
 

@@ -3,6 +3,7 @@ import Home from "./pages/Home"
 import Gallery from "./pages/Gallery"
 
 function App() {
+
   return (
     <BrowserRouter>
       <Routes>

@@ -1,6 +1,6 @@
 function About() {
   return (
-    <section id="about" className="section-pad">
+    <section id="about" className="section-pad reveal">
 
       <div className="about-inner">
 

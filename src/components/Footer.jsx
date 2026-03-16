@@ -83,10 +83,6 @@ function Footer() {
           © 2026 Aperture Photography Club
         </div>
 
-        <div>
-          Built with ❤️ by <span>Ram</span>
-        </div>
-
       </div>
 
     </footer>

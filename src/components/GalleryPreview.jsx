@@ -1,6 +1,6 @@
 function GalleryPreview() {
   return (
-    <section id="gallery-preview" className="section-pad">
+    <section id="gallery-preview" className="section-pad reveal">
 
       <div className="gallery-header">
 

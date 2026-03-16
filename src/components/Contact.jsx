@@ -1,6 +1,6 @@
 function Contact() {
   return (
-    <section id="contact" className="section-pad">
+    <section id="contact" className="section-pad reveal">
 
       <div className="contact-inner">
 
