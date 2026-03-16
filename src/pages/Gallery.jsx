@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 function Gallery() {
   const images = [
@@ -184,10 +185,10 @@ function Gallery() {
     <div className="gallery-page ">
       <header className="gallery-header">
         <div className="gallery-header-inner">
-        <div className="nav-logo">
-          <span className="nav-logo-name">Aperture</span>
-          <span className="nav-logo-sub">Photography Club</span>
-        </div>
+        <Link to="/" className="nav-logo">
+  <span className="nav-logo-name">Aperture</span>
+  <span className="nav-logo-sub">Photography Club</span>
+</Link>
 
         <div className="header-meta">
           <span>

@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 function Hero() {
   return (
-    <section id="hero" className="reveal">
+    <section id="hero" >
       <div className="hero-bg">
         <img
           src="https://images.unsplash.com/photo-1452587925148-ce544e77e70d?w=1800&q=85"
