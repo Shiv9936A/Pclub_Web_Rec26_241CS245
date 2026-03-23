@@ -8,7 +8,7 @@ function GalleryPreview() {
           <div className="divider-line"></div>
           <div className="divider-dot"></div>
           <div className="divider-line"></div>
-        </div> */}
+        </div>*/}
         <div>
           <div className="section-eyebrow">Member work</div>
 
