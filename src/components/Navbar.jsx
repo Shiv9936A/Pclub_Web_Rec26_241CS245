@@ -33,7 +33,7 @@ function Navbar() {
     window.addEventListener("scroll", handleScroll, { passive: true });
 
     return () =>
-      window.addEventListener("scroll", handleScroll, { passive: true });
+      window.removeEventListener("scroll", handleScroll);
   }, []);
   useEffect(() => {
     const sections = document.querySelectorAll("section");
@@ -90,9 +90,9 @@ function Navbar() {
         </ul>
 
         <div className="nav-right">
-          <Link to="/events" className="nav-cta">
+          <a href="#events" className="nav-cta">
             Join Club
-          </Link>
+          </a>
 
           <button
             className="theme-toggle"
